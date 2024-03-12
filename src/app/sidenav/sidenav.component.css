@@ -1,0 +1,51 @@
+mat-list-item {
+    cursor: pointer;
+
+    div {
+        display: flex;
+
+        span {
+            display: none;
+            margin-top: 0.25rem;
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+.show-up {
+    span {
+        display: block !important;
+        animation: fade-in 0.3s ease-in-out;
+        margin-left: 0.5rem;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hide {
+    span {
+        display: block !important;
+        animation: fade-out 0.3s ease-in-out;
+        margin-left: 0;
+        width: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

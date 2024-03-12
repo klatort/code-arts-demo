@@ -1,0 +1,27 @@
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+        <mat-nav-list [class.show-up]="isExpanded" [class.hide]="!isExpanded">
+            <mat-list-item (click)="isExpanded = !isExpanded">
+                <mat-icon>menu</mat-icon>
+            </mat-list-item>
+            <mat-list-item [routerLink]="'/home'">
+                <div>
+                    <mat-icon>home</mat-icon>
+                    <span>Home</span>
+                </div>
+            </mat-list-item>
+            <mat-list-item [routerLink]="'/messages'">
+                <div>
+                    <mat-icon>message</mat-icon>
+                    <span>Messages</span>
+                </div>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-sidenav-container>
+        <mat-sidenav-content>
+            <ng-content>
+            </ng-content>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</mat-drawer-container>

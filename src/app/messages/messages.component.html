@@ -1,0 +1,26 @@
+<div class="container" [style.justify-content]="!isLoading ? '' : 'center'">
+    <mat-spinner *ngIf="isLoading" color="warn"></mat-spinner>
+    <div *ngIf="!isLoading">
+        <h1 style="padding: 0 1rem;">Messages!</h1>
+        <mat-card *ngFor="let message of messages" style="margin: 10px;">
+            <mat-card-header>
+                <mat-card-title>{{ message.name }}</mat-card-title>
+                <mat-card-subtitle>{{ message.email }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                {{ message.message }}
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button #likeBtn (click)="changeScore(message, 'like', dislikeBtn, likeBtn)" mat-mini-fab
+                    color="primary"><mat-icon>thumb_up_alt</mat-icon>
+                    <h4 *ngIf="likeBtn.disabled">{{message.likes}}</h4>
+                </button>
+                <span style="margin: 0 0.5rem;"></span>
+                <button #dislikeBtn (click)="changeScore(message, 'dislike', likeBtn, dislikeBtn)" mat-mini-fab
+                    color="warn"><mat-icon>thumb_down_alt</mat-icon>
+                    <h4 *ngIf="dislikeBtn.disabled">{{message.dislikes}}</h4>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
