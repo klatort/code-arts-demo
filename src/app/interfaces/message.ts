@@ -5,4 +5,5 @@ export interface Message {
     message: string;
     likes: number;
     dislikes: number;
+    date: Date;
 }

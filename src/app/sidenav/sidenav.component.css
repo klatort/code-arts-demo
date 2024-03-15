@@ -2,6 +2,7 @@ mat-list-item {
     cursor: pointer;
 
     div {
+        
         display: flex;
 
         span {

@@ -6,7 +6,8 @@ import { MessagesComponent } from './messages.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatBadgeModule } from '@angular/material/badge';   
+import { MatBadgeModule } from '@angular/material/badge';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: MessagesComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
+    HttpClientModule
   ],
   exports: [MessagesComponent]
 })

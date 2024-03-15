@@ -1,17 +1,18 @@
 <div class="container" style="justify-content: center;">
-    <h1>CodeArts demo!</h1>
-    <form class="example-form">
+    <h1 style="text-align: center;">CodeArts demo</h1>
+    <h4> Leave a message!</h4>
+    <form (submit)="submitForm($event)" class="example-form" id="myForm">
         <mat-form-field>
             <mat-label>Name</mat-label>
-            <input matInput placeholder="John Doe">
+            <input matInput placeholder="John Doe" id="nameInput">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Email</mat-label>
-            <input matInput placeholder="johndoe@huawei.com">
+            <input matInput placeholder="johndoe@huawei.com" id="emailInput">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Message</mat-label>
-            <textarea matInput placeholder="Makes me feel..."></textarea>
+            <textarea matInput placeholder="Makes me feel..." id="messageInput"></textarea>
         </mat-form-field>
         <button mat-raised-button color="warn">Submit</button>
     </form>

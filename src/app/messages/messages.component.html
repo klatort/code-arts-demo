@@ -1,6 +1,6 @@
 <div class="container" [style.justify-content]="!isLoading ? '' : 'center'">
     <mat-spinner *ngIf="isLoading" color="warn"></mat-spinner>
-    <div *ngIf="!isLoading">
+    <div *ngIf="!isLoading" style="width: 100%;">
         <h1 style="padding: 0 1rem;">Messages!</h1>
         <mat-card *ngFor="let message of messages" style="margin: 10px;">
             <mat-card-header>
@@ -10,7 +10,9 @@
             <mat-card-content>
                 {{ message.message }}
             </mat-card-content>
-            <mat-card-actions align="end">
+            <mat-card-actions align="start">
+                <h5 style="margin-left: 0.5rem;">Posted on: {{ message.date | date: 'dd/MM/YY' }}</h5>
+                <span style="flex: 1 1 auto;"></span>
                 <button #likeBtn (click)="changeScore(message, 'like', dislikeBtn, likeBtn)" mat-mini-fab
                     color="primary"><mat-icon>thumb_up_alt</mat-icon>
                     <h4 *ngIf="likeBtn.disabled">{{message.likes}}</h4>
