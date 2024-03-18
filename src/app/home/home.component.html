@@ -1,19 +1,29 @@
 <div class="container" style="justify-content: center;">
     <h1 style="text-align: center;">CodeArts demo</h1>
-    <h4> Leave a message!</h4>
-    <form (submit)="submitForm($event)" class="example-form" id="myForm">
-        <mat-form-field>
+    <h4>Leave a message!</h4>
+    <form [formGroup]="form" (submit)="submitForm($event)" class="example-form" id="myForm">
+        <mat-form-field hideRequiredMarker>
             <mat-label>Name</mat-label>
-            <input matInput placeholder="John Doe" id="nameInput">
+            <input matInput placeholder="John Doe" type="text" formControlName="name">
+            <mat-error *ngIf="form.get('name')?.touched || form.hasError">
+                {{ getErrorMessage('name') }}
+            </mat-error>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field hideRequiredMarker>
             <mat-label>Email</mat-label>
-            <input matInput placeholder="johndoe@huawei.com" id="emailInput">
+            <input matInput placeholder="john.doe@huawei.com" type="email" formControlName="email">
+            <mat-error *ngIf="form.get('email')?.touched || form.hasError">
+                {{ getErrorMessage('email') }}
+            </mat-error>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field hideRequiredMarker>
             <mat-label>Message</mat-label>
-            <textarea matInput placeholder="Makes me feel..." id="messageInput"></textarea>
+            <textarea matInput placeholder="Makes me feel..." type="text" formControlName="message"></textarea>
+            <mat-error *ngIf="form.get('message')?.touched || form.hasError">
+                {{ getErrorMessage('message') }}
+            </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="warn">Submit</button>
+        <button *ngIf="!isLoading" mat-raised-button color="warn" style="margin: 0.5rem;">Post!</button>
+        <mat-spinner *ngIf="isLoading" diameter="30" style="margin: 0.5rem;" color="warn"></mat-spinner>
     </form>
 </div>
