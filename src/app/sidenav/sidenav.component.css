@@ -50,3 +50,7 @@ mat-list-item {
         opacity: 0;
     }
 }
+
+.side-text {
+    font-weight: 500;
+}

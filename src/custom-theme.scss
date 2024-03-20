@@ -282,9 +282,6 @@ $altTheme: (
   --mdc-button__label: #c7000b !important;
 }
 
-simple-snackbar {
-  button {
-    background-color: #c7000b !important;
-    color: #fff !important;
-  }
+.my-mat-mini-fab {
+  --mat-fab-small-foreground-color: #fff !important;
 }

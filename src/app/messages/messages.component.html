@@ -14,7 +14,7 @@
                 <h5 style="margin-left: 0.5rem;">Posted on: {{ message.date | date: 'dd/MM/YY' }}</h5>
                 <span style="flex: 1 1 auto;"></span>
                 <button #likeBtn (click)="changeScore(message, 'like', dislikeBtn, likeBtn)" mat-mini-fab
-                    color="primary"><mat-icon>thumb_up_alt</mat-icon>
+                    color="primary" class="my-mat-mini-fab"><mat-icon>thumb_up_alt</mat-icon>
                     <h4 *ngIf="likeBtn.disabled">{{message.likes}}</h4>
                 </button>
                 <span style="margin: 0 0.5rem;"></span>

@@ -34,7 +34,7 @@ export class MessagesComponent implements OnInit {
       next: (response: any) => {
         this.messages.push(...response.map((item: any) => ({
           id: item._id,
-          name: item.email,
+          name: item.name,
           email: item.email,
           message: item.message,
           likes: item.likes,
